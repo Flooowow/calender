@@ -14,17 +14,10 @@
     --ink-soft: #3d3d50;
     --ink-ghost: #9896a8;
     --sakura: #d4a0a0;
-    --sakura-light: #e8c8c8;
     --sage: #8faa96;
-    --sage-light: #c5d5c8;
-    --bamboo: #b5a882;
-    --mist: #c8cdd6;
-    --mist-light: #e4e7ed;
     --accent-line: #1c1c2a22;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     background-color: var(--washi);
     color: var(--ink);
@@ -37,595 +30,203 @@
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
   }
 
-  /* ─── HEADER ─────────────────────────────────── */
   header {
     padding: 2.5rem 3rem 1.5rem;
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
+    display: flex; align-items: baseline; justify-content: space-between;
     border-bottom: 1px solid var(--accent-line);
   }
-
-  .logo {
-    display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
-  }
-
-  .logo-kanji {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-    color: var(--ink);
-    line-height: 1;
-  }
-
-  .logo-sub {
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ink-ghost);
-  }
-
-  .header-actions {
-    display: flex;
-    gap: 0.75rem;
-    align-items: center;
-  }
+  .logo { display: flex; align-items: baseline; gap: 0.75rem; }
+  .logo-kanji { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; letter-spacing: 0.05em; line-height: 1; }
+  .logo-sub { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-ghost); }
+  .header-actions { display: flex; gap: 0.75rem; align-items: center; }
 
   .btn-ghost {
-    background: none;
-    border: 1px solid var(--accent-line);
-    color: var(--ink-soft);
-    font-family: 'Zen Kaku Gothic New', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    padding: 0.4rem 1rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    border-radius: 2px;
+    background: none; border: 1px solid var(--accent-line); color: var(--ink-soft);
+    font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 0.72rem; letter-spacing: 0.12em;
+    padding: 0.4rem 1rem; cursor: pointer; transition: all 0.2s; border-radius: 2px;
   }
+  .btn-ghost:hover { background: var(--washi-dark); border-color: var(--ink-ghost); }
 
-  .btn-ghost:hover {
-    background: var(--washi-dark);
-    border-color: var(--ink-ghost);
-  }
-
-  /* ─── TABS ─────────────────────────────────── */
-  .tabs-bar {
-    display: flex;
-    gap: 0;
-    padding: 0 3rem;
-    border-bottom: 1px solid var(--accent-line);
-  }
-
+  .tabs-bar { display: flex; padding: 0 3rem; border-bottom: 1px solid var(--accent-line); }
   .tab-btn {
-    background: none;
-    border: none;
-    border-bottom: 2px solid transparent;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    font-weight: 300;
-    letter-spacing: 0.08em;
-    color: var(--ink-ghost);
-    padding: 1rem 1.5rem 0.8rem;
-    cursor: pointer;
-    transition: all 0.25s;
-    margin-bottom: -1px;
+    background: none; border: none; border-bottom: 2px solid transparent;
+    font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 300;
+    letter-spacing: 0.08em; color: var(--ink-ghost); padding: 1rem 1.5rem 0.8rem;
+    cursor: pointer; transition: all 0.25s; margin-bottom: -1px;
   }
-
   .tab-btn:hover { color: var(--ink-soft); }
+  .tab-btn.active { color: var(--ink); border-bottom-color: var(--ink); }
 
-  .tab-btn.active {
-    color: var(--ink);
-    border-bottom-color: var(--ink);
-  }
-
-  /* ─── YEAR NAV ─────────────────────────────────── */
-  .year-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    padding: 1.5rem 3rem 0.5rem;
-  }
-
-  .year-label {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
-    font-weight: 300;
-    letter-spacing: 0.1em;
-  }
-
-  .year-arrow {
-    background: none;
-    border: none;
-    font-size: 1.1rem;
-    color: var(--ink-ghost);
-    cursor: pointer;
-    padding: 0.2rem 0.5rem;
-    transition: color 0.2s;
-    line-height: 1;
-  }
-
+  .year-nav { display: flex; align-items: center; justify-content: center; gap: 1.5rem; padding: 1.5rem 3rem 0.5rem; }
+  .year-label { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; letter-spacing: 0.1em; }
+  .year-arrow { background: none; border: none; font-size: 1.1rem; color: var(--ink-ghost); cursor: pointer; padding: 0.2rem 0.5rem; transition: color 0.2s; line-height: 1; }
   .year-arrow:hover { color: var(--ink); }
 
-  /* ─── CALENDAR GRID ─────────────────────────────────── */
-  .calendar-container {
-    padding: 1rem 3rem 3rem;
-  }
-
-  .months-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
-
-  .month-block { }
+  .calendar-container { padding: 1rem 3rem 3rem; }
+  .months-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
 
   .month-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ink-ghost);
-    margin-bottom: 0.6rem;
-    padding-bottom: 0.3rem;
-    border-bottom: 1px solid var(--accent-line);
+    font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--ink-ghost); margin-bottom: 0.6rem;
+    padding-bottom: 0.3rem; border-bottom: 1px solid var(--accent-line);
   }
-
-  .month-weekdays {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 2px;
-    margin-bottom: 3px;
-  }
-
-  .weekday-label {
-    font-size: 0.58rem;
-    letter-spacing: 0.1em;
-    color: var(--ink-ghost);
-    text-align: center;
-    padding: 2px 0;
-  }
-
-  .month-days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 2px;
-  }
+  .month-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; margin-bottom: 3px; }
+  .weekday-label { font-size: 0.58rem; letter-spacing: 0.1em; color: var(--ink-ghost); text-align: center; padding: 2px 0; }
+  .month-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
 
   .day-cell {
-    aspect-ratio: 1;
-    border-radius: 2px;
-    cursor: pointer;
-    position: relative;
+    aspect-ratio: 1; border-radius: 2px; cursor: pointer; position: relative;
     transition: transform 0.15s, box-shadow 0.15s;
-    background: var(--washi-dark);
+    background: var(--washi-dark); overflow: hidden;
   }
-
-  .day-cell:hover {
-    transform: scale(1.15);
-    z-index: 10;
-    box-shadow: 0 2px 8px rgba(28,28,42,0.12);
-  }
-
-  .day-cell.empty {
-    background: transparent;
-    cursor: default;
-    pointer-events: none;
-  }
-
+  .day-cell:hover { transform: scale(1.15); z-index: 10; box-shadow: 0 2px 8px rgba(28,28,42,0.12); }
+  .day-cell.empty { background: transparent; cursor: default; pointer-events: none; }
   .day-cell.today { box-shadow: 0 0 0 1.5px var(--ink); }
 
   .day-number {
-    position: absolute;
-    bottom: 1px;
-    right: 2px;
-    font-size: 0.48rem;
-    color: rgba(28,28,42,0.35);
-    line-height: 1;
+    position: absolute; bottom: 1px; right: 2px; font-size: 0.48rem;
+    color: rgba(28,28,42,0.4); line-height: 1; z-index: 2;
+    mix-blend-mode: multiply;
   }
 
-  /* Coloration des jours */
-  .day-cell[data-color] { }
+  /* 3 vertical slices */
+  .slice { position: absolute; top: 0; height: 100%; }
+  .slice-matin  { left: 0;        width: 33.333%; }
+  .slice-apm    { left: 33.333%;  width: 33.333%; }
+  .slice-soir   { left: 66.666%;  width: 33.334%; }
 
-  /* ─── CORRELATION VIEW ─────────────────────────────────── */
-  .day-cell.correl-view {
-    overflow: hidden;
-  }
-
-  .correl-top, .correl-bottom {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0; left: 0;
-  }
-
-  /* diagonal split using clip-path */
-  .correl-top { clip-path: polygon(0 0, 100% 0, 100% 100%); }
+  /* Correlation diagonal */
+  .correl-top, .correl-bottom { position: absolute; width: 100%; height: 100%; top: 0; left: 0; }
+  .correl-top    { clip-path: polygon(0 0, 100% 0, 100% 100%); }
   .correl-bottom { clip-path: polygon(0 0, 0 100%, 100% 100%); }
 
-  /* ─── TOOLTIP ─────────────────────────────────── */
   .tooltip {
-    position: fixed;
-    background: var(--ink);
-    color: var(--washi);
-    font-size: 0.7rem;
-    line-height: 1.5;
-    padding: 0.6rem 0.9rem;
-    border-radius: 3px;
-    max-width: 200px;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.15s;
-    z-index: 1000;
-    white-space: pre-wrap;
+    position: fixed; background: var(--ink); color: var(--washi); font-size: 0.7rem;
+    line-height: 1.5; padding: 0.6rem 0.9rem; border-radius: 3px; max-width: 220px;
+    pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 1000; white-space: pre-wrap;
   }
-
   .tooltip.visible { opacity: 1; }
 
-  /* ─── MODAL ─────────────────────────────────── */
   .modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(28,28,42,0.35);
-    backdrop-filter: blur(4px);
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
+    position: fixed; inset: 0; background: rgba(28,28,42,0.35); backdrop-filter: blur(4px);
+    z-index: 100; display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.2s;
   }
-
-  .modal-overlay.open {
-    opacity: 1;
-    pointer-events: all;
-  }
-
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
   .modal {
-    background: var(--washi);
-    border-radius: 4px;
-    padding: 2rem;
-    width: 380px;
-    max-width: 90vw;
+    background: var(--washi); border-radius: 4px; padding: 2rem; width: 430px;
+    max-width: 92vw; max-height: 90vh; overflow-y: auto;
     box-shadow: 0 8px 40px rgba(28,28,42,0.15);
-    transform: translateY(8px);
-    transition: transform 0.2s;
+    transform: translateY(8px); transition: transform 0.2s;
   }
-
   .modal-overlay.open .modal { transform: translateY(0); }
 
   .modal-date {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 300;
-    letter-spacing: 0.08em;
-    color: var(--ink-soft);
-    margin-bottom: 1.2rem;
+    font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 300;
+    letter-spacing: 0.08em; color: var(--ink-soft); margin-bottom: 1.4rem;
   }
-
   .modal-section-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-ghost);
-    margin-bottom: 0.5rem;
+    font-size: 0.63rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-ghost); margin-bottom: 0.45rem;
   }
 
-  .palette-picker {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 1.2rem;
-  }
+  .slot-row { display: grid; grid-template-columns: 80px 1fr; gap: 0.5rem; align-items: center; margin-bottom: 0.8rem; }
+  .slot-label { font-size: 0.7rem; letter-spacing: 0.08em; color: var(--ink-soft); text-transform: uppercase; }
 
+  .palette-picker { display: flex; flex-wrap: wrap; gap: 0.3rem; }
   .palette-swatch {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: transform 0.15s, border-color 0.15s;
-    position: relative;
+    width: 23px; height: 23px; border-radius: 50%; cursor: pointer;
+    border: 2px solid transparent; transition: transform 0.15s, border-color 0.15s; flex-shrink: 0;
   }
-
   .palette-swatch:hover { transform: scale(1.15); }
   .palette-swatch.selected { border-color: var(--ink); }
-
   .palette-swatch-none {
-    background: var(--washi-dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.7rem;
-    color: var(--ink-ghost);
+    background: var(--washi-dark); display: flex; align-items: center;
+    justify-content: center; font-size: 0.62rem; color: var(--ink-ghost);
   }
+
+  .modal-divider { border: none; border-top: 1px solid var(--accent-line); margin: 1rem 0; }
 
   .modal-textarea {
-    width: 100%;
-    background: var(--washi-dark);
-    border: 1px solid var(--accent-line);
-    border-radius: 2px;
-    font-family: 'Zen Kaku Gothic New', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 300;
-    color: var(--ink);
-    padding: 0.6rem 0.8rem;
-    resize: vertical;
-    min-height: 70px;
-    outline: none;
-    transition: border-color 0.2s;
-    margin-bottom: 1.2rem;
+    width: 100%; background: var(--washi-dark); border: 1px solid var(--accent-line);
+    border-radius: 2px; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 0.8rem;
+    font-weight: 300; color: var(--ink); padding: 0.6rem 0.8rem; resize: vertical;
+    min-height: 65px; outline: none; transition: border-color 0.2s; margin-bottom: 1.2rem;
   }
-
   .modal-textarea:focus { border-color: var(--ink-ghost); }
   .modal-textarea::placeholder { color: var(--ink-ghost); }
-
-  .modal-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.6rem;
-  }
+  .modal-actions { display: flex; justify-content: flex-end; gap: 0.6rem; }
 
   .btn-primary {
-    background: var(--ink);
-    color: var(--washi);
-    border: none;
-    font-family: 'Zen Kaku Gothic New', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    padding: 0.5rem 1.2rem;
-    cursor: pointer;
-    border-radius: 2px;
-    transition: background 0.2s;
+    background: var(--ink); color: var(--washi); border: none;
+    font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 0.72rem;
+    letter-spacing: 0.12em; padding: 0.5rem 1.2rem; cursor: pointer; border-radius: 2px; transition: background 0.2s;
   }
-
   .btn-primary:hover { background: var(--ink-soft); }
 
-  /* ─── PALETTE MANAGER ─────────────────────────────────── */
   .palette-manager {
-    position: fixed;
-    top: 0; right: 0;
-    height: 100vh;
-    width: 320px;
-    background: var(--washi);
-    box-shadow: -4px 0 24px rgba(28,28,42,0.1);
-    z-index: 200;
-    padding: 2rem;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    overflow-y: auto;
+    position: fixed; top: 0; right: 0; height: 100vh; width: 320px;
+    background: var(--washi); box-shadow: -4px 0 24px rgba(28,28,42,0.1);
+    z-index: 200; padding: 2rem; transform: translateX(100%); transition: transform 0.3s ease; overflow-y: auto;
   }
-
   .palette-manager.open { transform: translateX(0); }
-
-  .pm-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-  }
-
-  .pm-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 300;
-    letter-spacing: 0.08em;
-  }
-
-  .pm-close {
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    color: var(--ink-ghost);
-    cursor: pointer;
-    line-height: 1;
-    padding: 0.2rem;
-  }
-
-  .pm-tab-row {
-    display: flex;
-    gap: 0;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid var(--accent-line);
-  }
-
+  .pm-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+  .pm-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; letter-spacing: 0.08em; }
+  .pm-close { background: none; border: none; font-size: 1.2rem; color: var(--ink-ghost); cursor: pointer; }
+  .pm-tab-row { display: flex; margin-bottom: 1.5rem; border-bottom: 1px solid var(--accent-line); }
   .pm-tab {
-    background: none;
-    border: none;
-    border-bottom: 2px solid transparent;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.95rem;
-    letter-spacing: 0.06em;
-    color: var(--ink-ghost);
-    padding: 0.5rem 1rem 0.4rem;
-    cursor: pointer;
-    margin-bottom: -1px;
-    transition: all 0.2s;
+    background: none; border: none; border-bottom: 2px solid transparent;
+    font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; letter-spacing: 0.06em;
+    color: var(--ink-ghost); padding: 0.5rem 1rem 0.4rem; cursor: pointer; margin-bottom: -1px; transition: all 0.2s;
   }
-
   .pm-tab.active { color: var(--ink); border-bottom-color: var(--ink); }
-
   .palette-list { display: flex; flex-direction: column; gap: 0.5rem; }
-
-  .palette-entry {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
-
-  .palette-entry input[type="color"] {
-    width: 32px;
-    height: 32px;
-    border: none;
-    border-radius: 50%;
-    padding: 0;
-    cursor: pointer;
-    background: none;
-    flex-shrink: 0;
-  }
-
+  .palette-entry { display: flex; align-items: center; gap: 0.6rem; }
+  .palette-entry input[type="color"] { width: 32px; height: 32px; border: none; border-radius: 50%; padding: 0; cursor: pointer; background: none; flex-shrink: 0; }
   .palette-entry input[type="text"] {
-    flex: 1;
-    background: var(--washi-dark);
-    border: 1px solid var(--accent-line);
-    border-radius: 2px;
-    font-family: 'Zen Kaku Gothic New', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 300;
-    color: var(--ink);
-    padding: 0.35rem 0.6rem;
-    outline: none;
+    flex: 1; background: var(--washi-dark); border: 1px solid var(--accent-line);
+    border-radius: 2px; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 0.78rem;
+    font-weight: 300; color: var(--ink); padding: 0.35rem 0.6rem; outline: none;
   }
-
   .palette-entry input[type="text"]:focus { border-color: var(--ink-ghost); }
-
-  .palette-entry-del {
-    background: none;
-    border: none;
-    color: var(--ink-ghost);
-    cursor: pointer;
-    font-size: 0.85rem;
-    padding: 0.2rem;
-    transition: color 0.2s;
-    flex-shrink: 0;
-  }
-
+  .palette-entry-del { background: none; border: none; color: var(--ink-ghost); cursor: pointer; font-size: 0.85rem; padding: 0.2rem; transition: color 0.2s; flex-shrink: 0; }
   .palette-entry-del:hover { color: var(--sakura); }
-
   .btn-add-color {
-    margin-top: 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    background: none;
-    border: 1px dashed var(--accent-line);
-    color: var(--ink-ghost);
-    font-family: 'Zen Kaku Gothic New', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    padding: 0.45rem 0.8rem;
-    cursor: pointer;
-    border-radius: 2px;
-    width: 100%;
-    transition: all 0.2s;
+    margin-top: 0.8rem; display: flex; align-items: center; gap: 0.4rem;
+    background: none; border: 1px dashed var(--accent-line); color: var(--ink-ghost);
+    font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 0.72rem; letter-spacing: 0.1em;
+    padding: 0.45rem 0.8rem; cursor: pointer; border-radius: 2px; width: 100%; transition: all 0.2s;
   }
-
   .btn-add-color:hover { border-color: var(--ink-ghost); color: var(--ink-soft); }
 
-  /* ─── LEGEND ─────────────────────────────────── */
-  .legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    padding: 0.8rem 3rem 0;
-  }
+  .legend { display: flex; flex-wrap: wrap; gap: 0.6rem; padding: 0.8rem 3rem 0; }
+  .legend-item { display: flex; align-items: center; gap: 0.35rem; font-size: 0.68rem; color: var(--ink-soft); letter-spacing: 0.05em; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
 
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-    font-size: 0.68rem;
-    color: var(--ink-soft);
-    letter-spacing: 0.05em;
-  }
+  .correl-legend { display: flex; gap: 1.5rem; padding: 0.8rem 3rem 0; align-items: center; }
+  .correl-legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.68rem; color: var(--ink-soft); }
+  .correl-legend-box { width: 18px; height: 18px; position: relative; border-radius: 2px; overflow: hidden; flex-shrink: 0; }
+  .correl-legend-top { position: absolute; inset: 0; background: var(--sakura); clip-path: polygon(0 0, 100% 0, 100% 100%); }
+  .correl-legend-bottom { position: absolute; inset: 0; background: var(--sage); clip-path: polygon(0 0, 0 100%, 100% 100%); }
 
-  .legend-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  /* ─── CORREL LEGEND ─────────────────────────────────── */
-  .correl-legend {
-    display: flex;
-    gap: 1.5rem;
-    padding: 0.8rem 3rem 0;
-    align-items: center;
-  }
-
-  .correl-legend-item {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.68rem;
-    color: var(--ink-soft);
-  }
-
-  .correl-legend-box {
-    width: 18px;
-    height: 18px;
-    position: relative;
-    border-radius: 2px;
-    overflow: hidden;
-    flex-shrink: 0;
-  }
-
-  .correl-legend-top {
-    position: absolute;
-    inset: 0;
-    background: var(--sakura);
-    clip-path: polygon(0 0, 100% 0, 100% 100%);
-  }
-
-  .correl-legend-bottom {
-    position: absolute;
-    inset: 0;
-    background: var(--sage);
-    clip-path: polygon(0 0, 0 100%, 100% 100%);
-  }
-
-  /* ─── IMPORT/EXPORT MODAL ─────────────────────────────────── */
-  .ie-content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
+  .ie-content { display: flex; flex-direction: column; gap: 0.8rem; }
   .ie-textarea {
-    width: 100%;
-    background: var(--washi-dark);
-    border: 1px solid var(--accent-line);
-    border-radius: 2px;
-    font-family: monospace;
-    font-size: 0.7rem;
-    color: var(--ink);
-    padding: 0.6rem 0.8rem;
-    resize: vertical;
-    min-height: 120px;
-    outline: none;
+    width: 100%; background: var(--washi-dark); border: 1px solid var(--accent-line);
+    border-radius: 2px; font-family: monospace; font-size: 0.7rem; color: var(--ink);
+    padding: 0.6rem 0.8rem; resize: vertical; min-height: 120px; outline: none;
   }
 
-  /* ─── RESPONSIVE ─────────────────────────────────── */
   @media (max-width: 900px) {
     .months-grid { grid-template-columns: repeat(3, 1fr); }
-    header, .tabs-bar, .calendar-container, .legend, .year-nav, .correl-legend {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
+    header, .tabs-bar, .calendar-container, .legend, .year-nav, .correl-legend { padding-left: 1.5rem; padding-right: 1.5rem; }
   }
-
   @media (max-width: 600px) {
     .months-grid { grid-template-columns: repeat(2, 1fr); }
     header { padding: 1.5rem 1.2rem 1rem; }
-    .tabs-bar, .calendar-container, .legend, .year-nav, .correl-legend {
-      padding-left: 1.2rem;
-      padding-right: 1.2rem;
-    }
+    .tabs-bar, .calendar-container, .legend, .year-nav, .correl-legend { padding-left: 1.2rem; padding-right: 1.2rem; }
   }
-
-  /* ─── FADE IN ─────────────────────────────────── */
   .tab-content { animation: fadeUp 0.3s ease; }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 </style>
 </head>
 <body>
@@ -655,9 +256,7 @@
     <button class="year-arrow" onclick="changeYear(1)">→</button>
   </div>
   <div class="legend" id="legend-moi"></div>
-  <div class="calendar-container">
-    <div class="months-grid" id="grid-moi"></div>
-  </div>
+  <div class="calendar-container"><div class="months-grid" id="grid-moi"></div></div>
 </div>
 
 <div id="tab-nous" class="tab-content" style="display:none">
@@ -667,9 +266,7 @@
     <button class="year-arrow" onclick="changeYear(1)">→</button>
   </div>
   <div class="legend" id="legend-nous"></div>
-  <div class="calendar-container">
-    <div class="months-grid" id="grid-nous"></div>
-  </div>
+  <div class="calendar-container"><div class="months-grid" id="grid-nous"></div></div>
 </div>
 
 <div id="tab-correl" class="tab-content" style="display:none">
@@ -679,29 +276,36 @@
     <button class="year-arrow" onclick="changeYear(1)">→</button>
   </div>
   <div class="correl-legend">
-    <span style="font-size:0.68rem;color:var(--ink-ghost);letter-spacing:0.08em;">Lecture de la case :</span>
+    <span style="font-size:0.68rem;color:var(--ink-ghost);letter-spacing:0.08em;">Lecture :</span>
     <div class="correl-legend-item">
-      <div class="correl-legend-box">
-        <div class="correl-legend-top"></div>
-        <div class="correl-legend-bottom"></div>
-      </div>
+      <div class="correl-legend-box"><div class="correl-legend-top"></div><div class="correl-legend-bottom"></div></div>
       <span>△ Moi &nbsp;/&nbsp; ▽ Nous</span>
     </div>
   </div>
-  <div class="calendar-container">
-    <div class="months-grid" id="grid-correl"></div>
-  </div>
+  <div class="calendar-container"><div class="months-grid" id="grid-correl"></div></div>
 </div>
 
-<!-- Tooltip -->
 <div class="tooltip" id="tooltip"></div>
 
 <!-- Day Modal -->
 <div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
-  <div class="modal" id="modal">
+  <div class="modal">
     <div class="modal-date" id="modal-date"></div>
-    <div class="modal-section-label">Humeur</div>
-    <div class="palette-picker" id="modal-palette"></div>
+
+    <div class="slot-row">
+      <div class="slot-label">Matin</div>
+      <div class="palette-picker" id="modal-palette-matin"></div>
+    </div>
+    <div class="slot-row">
+      <div class="slot-label">Après-midi</div>
+      <div class="palette-picker" id="modal-palette-apm"></div>
+    </div>
+    <div class="slot-row">
+      <div class="slot-label">Soir</div>
+      <div class="palette-picker" id="modal-palette-soir"></div>
+    </div>
+
+    <hr class="modal-divider">
     <div class="modal-section-label">Note du jour</div>
     <textarea class="modal-textarea" id="modal-note" placeholder="Comment tu te sens aujourd'hui…" rows="3"></textarea>
     <div class="modal-actions">
@@ -713,7 +317,7 @@
 
 <!-- Import/Export Modal -->
 <div class="modal-overlay" id="ie-overlay" onclick="handleIEOverlayClick(event)">
-  <div class="modal" id="ie-modal">
+  <div class="modal">
     <div class="modal-date" id="ie-title"></div>
     <div class="ie-content">
       <textarea class="ie-textarea" id="ie-textarea" rows="8"></textarea>
@@ -740,16 +344,15 @@
 </div>
 
 <script>
-// ─── STATE ───────────────────────────────────────────────
-const WEEKDAYS = ['L','M','M','J','V','S','D'];
+const WEEKDAYS  = ['L','M','M','J','V','S','D'];
 const MONTHS_FR = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+const SLOTS     = ['matin','apm','soir'];
 
-let currentTab = 'moi';
-let currentYear = new Date().getFullYear();
+let currentTab   = 'moi';
+let currentYear  = new Date().getFullYear();
 let pmCurrentTab = 'moi';
-
-let modalContext = null; // { tab, dateKey }
-let selectedColor = null;
+let modalContext = null;
+let selectedColors = { matin: null, apm: null, soir: null };
 
 const DEFAULT_PALETTES = {
   moi: [
@@ -772,59 +375,73 @@ const DEFAULT_PALETTES = {
 function loadData() {
   return {
     palettes: JSON.parse(localStorage.getItem('ma_palettes') || 'null') || DEFAULT_PALETTES,
-    entries: JSON.parse(localStorage.getItem('ma_entries') || '{}')
+    entries:  JSON.parse(localStorage.getItem('ma_entries')  || '{}')
   };
 }
-
-function saveData(data) {
-  localStorage.setItem('ma_palettes', JSON.stringify(data.palettes));
-  localStorage.setItem('ma_entries', JSON.stringify(data.entries));
+function saveData(d) {
+  localStorage.setItem('ma_palettes', JSON.stringify(d.palettes));
+  localStorage.setItem('ma_entries',  JSON.stringify(d.entries));
 }
 
 let appData = loadData();
 
-// ─── TABS ───────────────────────────────────────────────
+// ─── TABS ────────────────────────────────────────────────
 function switchTab(tab, btn) {
   currentTab = tab;
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  ['moi','nous','correl'].forEach(t => {
-    document.getElementById('tab-' + t).style.display = t === tab ? '' : 'none';
-  });
+  ['moi','nous','correl'].forEach(t =>
+    document.getElementById('tab-' + t).style.display = t === tab ? '' : 'none'
+  );
   render();
 }
+function changeYear(delta) { currentYear += delta; render(); }
 
-// ─── YEAR NAV ───────────────────────────────────────────
-function changeYear(delta) {
-  currentYear += delta;
-  render();
-}
-
-// ─── RENDER ─────────────────────────────────────────────
+// ─── RENDER ──────────────────────────────────────────────
 function render() {
-  if (currentTab === 'correl') {
-    renderCorrel();
-    return;
-  }
-  const tab = currentTab;
-  document.getElementById('year-label-' + tab).textContent = currentYear;
-  renderLegend(tab);
-  renderGrid(tab);
+  if (currentTab === 'correl') { renderCorrel(); return; }
+  document.getElementById('year-label-' + currentTab).textContent = currentYear;
+  renderLegend(currentTab);
+  renderGrid(currentTab);
 }
 
 function renderLegend(tab) {
-  const palette = appData.palettes[tab];
-  const el = document.getElementById('legend-' + tab);
-  el.innerHTML = palette.map(p =>
-    `<div class="legend-item">
-      <div class="legend-dot" style="background:${p.color}"></div>
-      <span>${p.label}</span>
-    </div>`
-  ).join('');
+  document.getElementById('legend-' + tab).innerHTML =
+    appData.palettes[tab].map(p =>
+      `<div class="legend-item"><div class="legend-dot" style="background:${p.color}"></div><span>${p.label}</span></div>`
+    ).join('');
+}
+
+function buildSlices(cell, entry) {
+  if (!entry) return;
+  const { matin, apm, soir } = entry;
+  if (!matin && !apm && !soir) return;
+
+  // All same or only one defined → solid fill
+  const defined = [matin, apm, soir].filter(Boolean);
+  const allSame = defined.every(c => c === defined[0]);
+  if (allSame) { cell.style.background = defined[0]; return; }
+
+  // 3 vertical slices
+  [['matin', matin], ['apm', apm], ['soir', soir]].forEach(([slot, color]) => {
+    if (!color) return;
+    const s = document.createElement('div');
+    s.className = `slice slice-${slot}`;
+    s.style.background = color;
+    cell.appendChild(s);
+  });
+}
+
+function buildCell(dateKey, tab) {
+  const entry = appData.entries[tab + '_' + dateKey];
+  const cell  = document.createElement('div');
+  cell.className = 'day-cell';
+  buildSlices(cell, entry);
+  return { cell, entry };
 }
 
 function renderGrid(tab) {
-  const grid = document.getElementById('grid-' + tab);
+  const grid  = document.getElementById('grid-' + tab);
   grid.innerHTML = '';
   const today = new Date();
 
@@ -832,10 +449,10 @@ function renderGrid(tab) {
     const block = document.createElement('div');
     block.className = 'month-block';
 
-    const monthName = document.createElement('div');
-    monthName.className = 'month-name';
-    monthName.textContent = MONTHS_FR[m];
-    block.appendChild(monthName);
+    const mn = document.createElement('div');
+    mn.className = 'month-name';
+    mn.textContent = MONTHS_FR[m];
+    block.appendChild(mn);
 
     const wdRow = document.createElement('div');
     wdRow.className = 'month-weekdays';
@@ -850,28 +467,20 @@ function renderGrid(tab) {
     const daysRow = document.createElement('div');
     daysRow.className = 'month-days';
 
-    const firstDay = new Date(currentYear, m, 1).getDay();
-    // JS: 0=Sun, adjust to Mon=0
-    const offset = (firstDay + 6) % 7;
+    const offset = (new Date(currentYear, m, 1).getDay() + 6) % 7;
     for (let i = 0; i < offset; i++) {
-      const empty = document.createElement('div');
-      empty.className = 'day-cell empty';
-      daysRow.appendChild(empty);
+      const e = document.createElement('div');
+      e.className = 'day-cell empty';
+      daysRow.appendChild(e);
     }
 
     const daysInMonth = new Date(currentYear, m + 1, 0).getDate();
     for (let d = 1; d <= daysInMonth; d++) {
       const dateKey = `${currentYear}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-      const entry = appData.entries[tab + '_' + dateKey];
-      const cell = document.createElement('div');
-      cell.className = 'day-cell';
+      const { cell, entry } = buildCell(dateKey, tab);
 
-      const isToday = today.getFullYear() === currentYear && today.getMonth() === m && today.getDate() === d;
-      if (isToday) cell.classList.add('today');
-
-      if (entry && entry.color) {
-        cell.style.background = entry.color;
-      }
+      if (today.getFullYear() === currentYear && today.getMonth() === m && today.getDate() === d)
+        cell.classList.add('today');
 
       const num = document.createElement('div');
       num.className = 'day-number';
@@ -879,15 +488,16 @@ function renderGrid(tab) {
       cell.appendChild(num);
 
       cell.addEventListener('click', () => openModal(tab, dateKey, m, d));
-      if (entry && entry.note) {
-        cell.addEventListener('mouseenter', (e) => showTooltip(e, entry.note, entry.color));
-        cell.addEventListener('mousemove', moveTooltip);
+
+      if (entry?.note) {
+        const tipColor = entry.matin || entry.apm || entry.soir || null;
+        cell.addEventListener('mouseenter', e2 => showTooltip(e2, entry.note, tipColor));
+        cell.addEventListener('mousemove',  moveTooltip);
         cell.addEventListener('mouseleave', hideTooltip);
       }
 
       daysRow.appendChild(cell);
     }
-
     block.appendChild(daysRow);
     grid.appendChild(block);
   }
@@ -899,7 +509,7 @@ function renderCorrel() {
     if (el) el.textContent = currentYear;
   });
 
-  const grid = document.getElementById('grid-correl');
+  const grid  = document.getElementById('grid-correl');
   grid.innerHTML = '';
   const today = new Date();
 
@@ -907,10 +517,10 @@ function renderCorrel() {
     const block = document.createElement('div');
     block.className = 'month-block';
 
-    const monthName = document.createElement('div');
-    monthName.className = 'month-name';
-    monthName.textContent = MONTHS_FR[m];
-    block.appendChild(monthName);
+    const mn = document.createElement('div');
+    mn.className = 'month-name';
+    mn.textContent = MONTHS_FR[m];
+    block.appendChild(mn);
 
     const wdRow = document.createElement('div');
     wdRow.className = 'month-weekdays';
@@ -925,40 +535,42 @@ function renderCorrel() {
     const daysRow = document.createElement('div');
     daysRow.className = 'month-days';
 
-    const firstDay = new Date(currentYear, m, 1).getDay();
-    const offset = (firstDay + 6) % 7;
+    const offset = (new Date(currentYear, m, 1).getDay() + 6) % 7;
     for (let i = 0; i < offset; i++) {
-      const empty = document.createElement('div');
-      empty.className = 'day-cell empty';
-      daysRow.appendChild(empty);
+      const e = document.createElement('div');
+      e.className = 'day-cell empty';
+      daysRow.appendChild(e);
     }
 
     const daysInMonth = new Date(currentYear, m + 1, 0).getDate();
     for (let d = 1; d <= daysInMonth; d++) {
-      const dateKey = `${currentYear}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-      const entryMoi = appData.entries['moi_' + dateKey];
+      const dateKey   = `${currentYear}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+      const entryMoi  = appData.entries['moi_'  + dateKey];
       const entryNous = appData.entries['nous_' + dateKey];
+
       const cell = document.createElement('div');
-      cell.className = 'day-cell correl-view';
+      cell.className = 'day-cell';
+      cell.style.overflow = 'hidden';
 
-      const isToday = today.getFullYear() === currentYear && today.getMonth() === m && today.getDate() === d;
-      if (isToday) cell.classList.add('today');
+      if (today.getFullYear() === currentYear && today.getMonth() === m && today.getDate() === d)
+        cell.classList.add('today');
 
-      // Base color when no data
-      if (!entryMoi?.color && !entryNous?.color) {
+      const repMoi  = entryMoi?.matin  || entryMoi?.apm  || entryMoi?.soir  || null;
+      const repNous = entryNous?.matin || entryNous?.apm || entryNous?.soir || null;
+
+      if (!repMoi && !repNous) {
         cell.style.background = 'var(--washi-dark)';
-      } else if (entryMoi?.color && !entryNous?.color) {
-        cell.style.background = entryMoi.color;
-      } else if (!entryMoi?.color && entryNous?.color) {
-        cell.style.background = entryNous.color;
+      } else if (repMoi && !repNous) {
+        cell.style.background = repMoi;
+      } else if (!repMoi && repNous) {
+        cell.style.background = repNous;
       } else {
-        // Split diagonal
         const top = document.createElement('div');
         top.className = 'correl-top';
-        top.style.background = entryMoi.color;
+        top.style.background = repMoi;
         const bot = document.createElement('div');
         bot.className = 'correl-bottom';
-        bot.style.background = entryNous.color;
+        bot.style.background = repNous;
         cell.appendChild(top);
         cell.appendChild(bot);
       }
@@ -968,95 +580,79 @@ function renderCorrel() {
       num.textContent = d;
       cell.appendChild(num);
 
-      const tooltipParts = [];
-      if (entryMoi?.note) tooltipParts.push('Moi : ' + entryMoi.note);
-      if (entryNous?.note) tooltipParts.push('Nous : ' + entryNous.note);
-      if (tooltipParts.length) {
-        const tipText = tooltipParts.join('\n\n');
-        cell.addEventListener('mouseenter', (e) => showTooltip(e, tipText, null));
-        cell.addEventListener('mousemove', moveTooltip);
+      const parts = [];
+      if (entryMoi?.note)  parts.push('Moi : '  + entryMoi.note);
+      if (entryNous?.note) parts.push('Nous : ' + entryNous.note);
+      if (parts.length) {
+        cell.addEventListener('mouseenter', e2 => showTooltip(e2, parts.join('\n\n'), null));
+        cell.addEventListener('mousemove',  moveTooltip);
         cell.addEventListener('mouseleave', hideTooltip);
       }
 
       daysRow.appendChild(cell);
     }
-
     block.appendChild(daysRow);
     grid.appendChild(block);
   }
 }
 
-// ─── TOOLTIP ────────────────────────────────────────────
+// ─── TOOLTIP ─────────────────────────────────────────────
 const tooltip = document.getElementById('tooltip');
-
 function showTooltip(e, text, color) {
   tooltip.textContent = text;
-  if (color) {
-    tooltip.style.background = shadeColor(color, -40);
-  } else {
-    tooltip.style.background = 'var(--ink)';
-  }
+  tooltip.style.background = color ? shadeColor(color, -40) : 'var(--ink)';
   tooltip.classList.add('visible');
   moveTooltip(e);
 }
-
 function moveTooltip(e) {
-  let x = e.clientX + 12;
-  let y = e.clientY - 10;
-  if (x + 210 > window.innerWidth) x = e.clientX - 210;
-  if (y + 80 > window.innerHeight) y = e.clientY - 80;
+  let x = e.clientX + 12, y = e.clientY - 10;
+  if (x + 230 > window.innerWidth)  x = e.clientX - 230;
+  if (y + 90  > window.innerHeight) y = e.clientY - 90;
   tooltip.style.left = x + 'px';
-  tooltip.style.top = y + 'px';
+  tooltip.style.top  = y + 'px';
 }
-
-function hideTooltip() {
-  tooltip.classList.remove('visible');
-}
-
+function hideTooltip() { tooltip.classList.remove('visible'); }
 function shadeColor(hex, amount) {
-  const num = parseInt(hex.slice(1), 16);
-  const r = Math.max(0, Math.min(255, (num >> 16) + amount));
-  const g = Math.max(0, Math.min(255, ((num >> 8) & 0xFF) + amount));
-  const b = Math.max(0, Math.min(255, (num & 0xFF) + amount));
+  const n = parseInt(hex.replace('#',''), 16);
+  const r = Math.max(0, Math.min(255, (n >> 16) + amount));
+  const g = Math.max(0, Math.min(255, ((n >> 8) & 0xFF) + amount));
+  const b = Math.max(0, Math.min(255, (n & 0xFF) + amount));
   return `rgb(${r},${g},${b})`;
 }
 
-// ─── MODAL ──────────────────────────────────────────────
+// ─── MODAL ───────────────────────────────────────────────
 function openModal(tab, dateKey, month, day) {
   modalContext = { tab, dateKey };
-  selectedColor = null;
+  const entry = appData.entries[tab + '_' + dateKey] || {};
+  selectedColors = { matin: entry.matin || null, apm: entry.apm || null, soir: entry.soir || null };
 
-  const [y, m, d] = dateKey.split('-');
+  const [y, m] = dateKey.split('-');
   document.getElementById('modal-date').textContent =
     `${day} ${MONTHS_FR[parseInt(m)-1]} ${y} — ${tab === 'moi' ? 'Mon humeur' : 'Notre dynamique'}`;
 
-  const entry = appData.entries[tab + '_' + dateKey];
-  document.getElementById('modal-note').value = entry?.note || '';
-  selectedColor = entry?.color || null;
-
-  renderModalPalette(tab);
+  document.getElementById('modal-note').value = entry.note || '';
+  SLOTS.forEach(slot => renderSlotPalette(tab, slot));
   document.getElementById('modal-overlay').classList.add('open');
 }
 
-function renderModalPalette(tab) {
-  const palette = appData.palettes[tab];
-  const container = document.getElementById('modal-palette');
+function renderSlotPalette(tab, slot) {
+  const palette   = appData.palettes[tab];
+  const container = document.getElementById('modal-palette-' + slot);
   container.innerHTML = '';
 
-  // "No color" swatch
   const none = document.createElement('div');
-  none.className = 'palette-swatch palette-swatch-none' + (!selectedColor ? ' selected' : '');
+  none.className = 'palette-swatch palette-swatch-none' + (!selectedColors[slot] ? ' selected' : '');
   none.title = 'Aucune';
   none.textContent = '○';
-  none.addEventListener('click', () => { selectedColor = null; renderModalPalette(tab); });
+  none.addEventListener('click', () => { selectedColors[slot] = null; renderSlotPalette(tab, slot); });
   container.appendChild(none);
 
   palette.forEach(p => {
     const sw = document.createElement('div');
-    sw.className = 'palette-swatch' + (selectedColor === p.color ? ' selected' : '');
+    sw.className = 'palette-swatch' + (selectedColors[slot] === p.color ? ' selected' : '');
     sw.style.background = p.color;
     sw.title = p.label;
-    sw.addEventListener('click', () => { selectedColor = p.color; renderModalPalette(tab); });
+    sw.addEventListener('click', () => { selectedColors[slot] = p.color; renderSlotPalette(tab, slot); });
     container.appendChild(sw);
   });
 }
@@ -1064,14 +660,14 @@ function renderModalPalette(tab) {
 function saveDay() {
   const { tab, dateKey } = modalContext;
   const note = document.getElementById('modal-note').value.trim();
-  const key = tab + '_' + dateKey;
+  const key  = tab + '_' + dateKey;
+  const { matin, apm, soir } = selectedColors;
 
-  if (selectedColor || note) {
-    appData.entries[key] = { color: selectedColor, note };
+  if (matin || apm || soir || note) {
+    appData.entries[key] = { matin, apm, soir, note };
   } else {
     delete appData.entries[key];
   }
-
   saveData(appData);
   closeModal();
   render();
@@ -1081,81 +677,72 @@ function closeModal() {
   document.getElementById('modal-overlay').classList.remove('open');
   modalContext = null;
 }
-
 function handleOverlayClick(e) {
   if (e.target === document.getElementById('modal-overlay')) closeModal();
 }
 
-// ─── PALETTE MANAGER ────────────────────────────────────
+// ─── PALETTE MANAGER ─────────────────────────────────────
 function openPaletteManager() {
   document.getElementById('palette-manager').classList.add('open');
   renderPMList();
 }
-
 function closePaletteManager() {
   document.getElementById('palette-manager').classList.remove('open');
   saveData(appData);
   render();
 }
-
 function switchPMTab(tab, btn) {
   pmCurrentTab = tab;
   document.querySelectorAll('.pm-tab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   renderPMList();
 }
-
 function renderPMList() {
-  const list = document.getElementById('pm-list');
+  const list    = document.getElementById('pm-list');
   const palette = appData.palettes[pmCurrentTab];
   list.innerHTML = '';
-
   palette.forEach((p, i) => {
     const row = document.createElement('div');
     row.className = 'palette-entry';
 
-    const colorInput = document.createElement('input');
-    colorInput.type = 'color';
-    colorInput.value = p.color;
-    colorInput.addEventListener('input', () => { appData.palettes[pmCurrentTab][i].color = colorInput.value; });
+    const ci = document.createElement('input');
+    ci.type  = 'color'; ci.value = p.color;
+    ci.addEventListener('input', () => { appData.palettes[pmCurrentTab][i].color = ci.value; });
 
-    const labelInput = document.createElement('input');
-    labelInput.type = 'text';
-    labelInput.value = p.label;
-    labelInput.placeholder = 'Nom de l\'humeur';
-    labelInput.addEventListener('input', () => { appData.palettes[pmCurrentTab][i].label = labelInput.value; });
+    const li = document.createElement('input');
+    li.type  = 'text'; li.value = p.label; li.placeholder = "Nom de l'humeur";
+    li.addEventListener('input', () => { appData.palettes[pmCurrentTab][i].label = li.value; });
 
     const del = document.createElement('button');
-    del.className = 'palette-entry-del';
-    del.textContent = '✕';
-    del.addEventListener('click', () => {
-      appData.palettes[pmCurrentTab].splice(i, 1);
-      renderPMList();
-    });
+    del.className = 'palette-entry-del'; del.textContent = '✕';
+    del.addEventListener('click', () => { appData.palettes[pmCurrentTab].splice(i, 1); renderPMList(); });
 
-    row.appendChild(colorInput);
-    row.appendChild(labelInput);
-    row.appendChild(del);
+    row.appendChild(ci); row.appendChild(li); row.appendChild(del);
     list.appendChild(row);
   });
 }
-
 function addPaletteEntry() {
   appData.palettes[pmCurrentTab].push({ color: '#c8b8d8', label: 'Nouvelle humeur' });
   renderPMList();
 }
 
-// ─── IMPORT / EXPORT ────────────────────────────────────
+// ─── EXPORT / IMPORT ─────────────────────────────────────
 function openExport() {
   document.getElementById('ie-title').textContent = 'Exporter les données';
-  document.getElementById('ie-textarea').value = JSON.stringify(appData, null, 2);
+  const json = JSON.stringify(appData, null, 2);
+  document.getElementById('ie-textarea').value = json;
   document.getElementById('ie-textarea').readOnly = true;
+
   const btn = document.getElementById('ie-action-btn');
-  btn.textContent = 'Copier';
+  btn.textContent = 'Télécharger .json';
   btn.onclick = () => {
-    navigator.clipboard.writeText(document.getElementById('ie-textarea').value);
-    btn.textContent = 'Copié ✓';
-    setTimeout(() => btn.textContent = 'Copier', 2000);
+    const blob = new Blob([json], { type: 'application/json' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href = url;
+    a.download = `humeurs-${new Date().toISOString().slice(0,10)}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
   };
   document.getElementById('ie-overlay').classList.add('open');
 }
@@ -1164,36 +751,27 @@ function openImport() {
   document.getElementById('ie-title').textContent = 'Importer des données';
   document.getElementById('ie-textarea').value = '';
   document.getElementById('ie-textarea').readOnly = false;
-  document.getElementById('ie-textarea').placeholder = 'Colle ici ton JSON exporté…';
+  document.getElementById('ie-textarea').placeholder = 'Colle ici le contenu de ton fichier .json…';
+
   const btn = document.getElementById('ie-action-btn');
   btn.textContent = 'Importer';
   btn.onclick = () => {
     try {
       const parsed = JSON.parse(document.getElementById('ie-textarea').value);
       if (parsed.palettes && parsed.entries) {
-        appData = parsed;
-        saveData(appData);
-        closeIE();
-        render();
-      } else {
-        alert('Format invalide.');
-      }
-    } catch {
-      alert('JSON invalide.');
-    }
+        appData = parsed; saveData(appData); closeIE(); render();
+      } else { alert('Format invalide.'); }
+    } catch { alert('JSON invalide.'); }
   };
   document.getElementById('ie-overlay').classList.add('open');
 }
 
-function closeIE() {
-  document.getElementById('ie-overlay').classList.remove('open');
-}
-
+function closeIE() { document.getElementById('ie-overlay').classList.remove('open'); }
 function handleIEOverlayClick(e) {
   if (e.target === document.getElementById('ie-overlay')) closeIE();
 }
 
-// ─── INIT ────────────────────────────────────────────────
+// ─── INIT ─────────────────────────────────────────────────
 render();
 </script>
 </body>
